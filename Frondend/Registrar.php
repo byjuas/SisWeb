@@ -56,7 +56,7 @@ and open the template in the editor.
                  require_once ("../Backend/config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	         require_once ("../Backend/config/conexion.php");//Contiene funcion que conecta a la base de datos
                      ?>
-                    <form class="col s12" action="../Backend/clientes/registro.php" method="post">
+                <form class="col s12"  method="post" name="registrar_cliente" action="../Backend/clientes/registro.php">
                         <div class="row">
                             <div class="input-field col s12 center">
                                 <h4>Registrate</h4>
@@ -187,7 +187,7 @@ and open the template in the editor.
                                     <ul id="select-options-a497ea3a-d314-e1f5-b896-9ccd4328f93f" class="dropdown-content select-dropdown" style="width: 405px; position: absolute; top: 0px; left: 0px; opacity: 1; display: none;">
 
                                         <li class=""><span>Business</span></li></ul>
-                                    <select class="initialized">
+                                    <select class="initialized" name="departamento">
                                         <option value="" disabled="" selected="">Seleccciona departamento</option>
                                         <?php
                                         $query_departamento = mysqli_query($con, "select * from departamentos order by nombre_departamento");
@@ -216,7 +216,8 @@ and open the template in the editor.
                                 <div class="input-field col s12 ">
                                     <ul id="select-options-a497ea3a-d314-e1f5-b896-9ccd4328f93f" class="dropdown-content select-dropdown" style="width: 405px; position: absolute; top: 0px; left: 0px; opacity: 1; display: none;">
 
-                                        <li class=""><span>Business</span></li></ul><select class="initialized">
+                                        <li class=""><span>Business</span></li></ul>
+                                    <select class="initialized" name="banco">
                                         <option value="" disabled="" selected="">Seleccciona un banco</option>
                                         <?php
                                         $query_departamento = mysqli_query($con, "select * from banco order by nombre");
@@ -237,7 +238,7 @@ and open the template in the editor.
                                 <div class="row margin">
                                     <div class="input-field col s12">
                                         <i class="mdi-action-lock-outline prefix"></i>
-                                        <input id="password" type="text">
+                                        <input id="password" type="text" name="numero_cuenta">
                                         <label for="password">Numero de Cuenta</label>
                                     </div>
                                 </div>
@@ -250,7 +251,7 @@ and open the template in the editor.
                                 <div class="row margin">
                                     <div class="input-field col s12">
                                         <i class="mdi-communication-email prefix"></i>
-                                        <input id="email" type="text">
+                                        <input id="email" type="text" name="numero_operacion">
                                         <label for="email" class="center-align">Numero Operacion Pago:</label>
                                     </div>
                                 </div>
@@ -261,7 +262,8 @@ and open the template in the editor.
                                     <div class="input-field col s12 ">
                                         <ul id="select-options-a497ea3a-d314-e1f5-b896-9ccd4328f93f" class="dropdown-content select-dropdown" style="width: 405px; position: absolute; top: 0px; left: 0px; opacity: 1; display: none;">
 
-                                            <li class=""><span>Business</span></li></ul><select class="initialized">
+                                            <li class=""><span>Business</span></li></ul>
+                                        <select class="initialized" name="banco_operacion">
                                             <option value="" disabled="" selected="">Seleccciona un banco</option>
                                             <?php
                                         $query_departamento = mysqli_query($con, "select * from banco order by nombre");
@@ -289,7 +291,7 @@ and open the template in the editor.
                         <div class="row margin">
                             <div class="input-field col s12">
                                 <i class="mdi-action-lock-outline prefix"></i>
-                                <input id="password-again" type="text">
+                                <input id="password-again" type="text" name="patrocinador_dni">
                                 <label for="password-again" class="">DNI del patrocinador</label>
                             </div>
                         </div>
@@ -312,9 +314,9 @@ and open the template in the editor.
                             <div class="row ma">
 
                             </div>
-                            <div class="input-field col s12">
+                            <button class="input-field col s12">
                                 <a class="btn waves-effect waves-light col s12">Registrarme</a>
-                            </div>
+                            </button>
                             <div class="input-field col s12">
                                 <p class="margin center medium-small sign-up">Ya tengo una cuenta <a href="Login.php">Login</a></p>
                             </div>
