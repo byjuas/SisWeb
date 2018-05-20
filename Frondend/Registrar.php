@@ -218,15 +218,20 @@ and open the template in the editor.
 
                                         <li class=""><span>Business</span></li></ul><select class="initialized">
                                         <option value="" disabled="" selected="">Seleccciona un banco</option>
-                                        <option value="1">Namco de Credito del Perú</option>
-                                        <option value="2">Caja Huancayo</option>
-                                        <option value="3">Interbank</option>
+                                        <?php
+                                        $query_departamento = mysqli_query($con, "select * from banco order by nombre");
+                                        while ($rw = mysqli_fetch_array($query_departamento)) {
+                                            ?>
+                                            <option value="<?php echo $rw['idbanco']; ?>"><?php echo $rw['nombre']; ?></option>			
+                                            <?php
+                                        }
+                                        ?>
                                     </select>
-                                    <label>Select Profile</label>
+                                    <label>Selecciona un banco</label>
                                 </div>
 
                             </div>
-
+                            
 
                             <div class="input-field col s6">
                                 <div class="row margin">
@@ -258,9 +263,14 @@ and open the template in the editor.
 
                                             <li class=""><span>Business</span></li></ul><select class="initialized">
                                             <option value="" disabled="" selected="">Seleccciona un banco</option>
-                                            <option value="1">Banco de Credito del Perú</option>
-                                            <option value="2">Caja Huancayo</option>
-                                            <option value="3">Interbank</option>
+                                            <?php
+                                        $query_departamento = mysqli_query($con, "select * from banco order by nombre");
+                                        while ($rw = mysqli_fetch_array($query_departamento)) {
+                                            ?>
+                                            <option value="<?php echo $rw['idbanco']; ?>"><?php echo $rw['nombre']; ?></option>			
+                                            <?php
+                                        }
+                                        ?>
                                         </select>
                                         <label>Select Profile</label>
                                     </div>
