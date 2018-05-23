@@ -27,13 +27,21 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
-    <head>
-        <?php include ('../head.php'); ?>
-    </head>
-    <body>
-        <?php include ('../Navbar.php'); ?>
+<html lang="en">
 
+<head>
+<?php include ('../head.php'); ?>
+</head>
+
+<body>
+    <?php include ('../Navbar.php'); ?>
+            
+            <section id="content">
+
+               
+                <div class="container">
+
+                     
 
         <!-- START CONTENT -->
         <section id="content">
@@ -50,7 +58,7 @@ and open the template in the editor.
 
             <div class="container">
 
-                <div id="mail-app" class="section">
+                <div id="chart-dashboard" >
                     <div class="row">
                         <div class="col s12">
                             <nav class="red">
@@ -94,10 +102,10 @@ and open the template in the editor.
                                                         <th data-field="price">Fech/N</th>
                                                         <th data-field="price">telefono</th>
                                                         <th data-field="price">direccion</th>
-                                                        <th data-field="price">id_dep</th>
-                                                        <th data-field="price">id-Banco</th>
-                                                        <th data-field="price">N°-cuenta</th>
-                                                        <th data-field="price">N°-pago</th>
+                                                        <th data-field="price">idDep</th>
+                                                        <th data-field="price">idBanco</th>
+                                                        <th data-field="price">N°Cuenta</th>
+                                                        <th data-field="price">N°Pago</th>
                                                         <th data-field="price">Banco-op</th>
                                                         <th data-field="price">Patro</th>
                                                     </tr>
@@ -110,7 +118,7 @@ and open the template in the editor.
                                                         <td>Tecjeiner@gmil.com</td>
                                                         <td>12345678901</td>
                                                         <td>75053012</td>
-                                                        <td>10-06-98</td>
+                                                        <td>10/06/98</td>
                                                         <td>961590878</td>
                                                         <td>villa rica</td>
                                                         <td>2</td>
@@ -222,31 +230,37 @@ and open the template in the editor.
                                 </div>   
                                         <div class="row">
                                             <div class="input-field col s6">
+                                                <i class="mdi-action-account-circle prefix"></i>
                                                 <input id="nombre_cliente" type="text" class="validate">
                                                 <input id="id_cliente" type='hidden'>
                                                 <label for="nombre_cliente">Nombre</label>
                                             </div>
                                             <div class="input-field col s6">
+                                                <i class="mdi-action-account-circle prefix"></i>
                                                 <input  id="apellidos" type="text" class="validate">
                                                 <label for="last_name">Apellidos</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s6">
+                                                <i class="mdi-action-account-circle prefix"></i>
                                                 <input id="mail" type="email" class="validate">
                                                 <label for="last_name">Email</label>
                                             </div>
                                             <div class="input-field col s6">
+                                                <i class="mdi-action-account-circle prefix"></i>
                                                 <input id="last_name" type="text" class="validate">
                                                 <label for="last_name">Usuario</label>
                                             </div>
                                         </div>
                                     <div class="row">
                                             <div class="input-field col s6">
+                                                <i class="mdi-action-account-circle prefix"></i>
                                                 <input id="last_name" type="password" class="validate">
                                                 <label for="last_name">Contraseña</label>
                                             </div>
                                             <div class="input-field col s6">
+                                                <i class="mdi-action-account-circle prefix"></i>
                                                 <input id="last_name" type="password" class="validate">
                                                 <label for="last_name">Validar Contraseña   </label>
                                             </div>
@@ -260,51 +274,30 @@ and open the template in the editor.
                 </div>
 
             </div>
+            </div>
             <!--end container-->
 
 
         </section>
 
-        <?php include ('../footer.php'); ?>
-         
-        <script>
-		$(function() {
-						$("#nombre_cliente").autocomplete({
-							source: "../Backend/autocomplete/usuarios.php",
-							minLength: 2,
-							select: function(event, ui) {
-								event.preventDefault();
-								$('#id_cliente').val(ui.item.id_cliente);
-								$('#nombre_cliente').val(ui.item.nombre_cliente);
-								$('#tel1').val(ui.item.telefono_cliente);
-								$('#mail').val(ui.item.email_cliente);
-																
-								
-							 }
-						});
-						 
-						
-					});
-					
-	$("#nombre_cliente" ).on( "keydown", function( event ) {
-						if (event.keyCode== $.ui.keyCode.LEFT || event.keyCode== $.ui.keyCode.RIGHT || event.keyCode== $.ui.keyCode.UP || event.keyCode== $.ui.keyCode.DOWN || event.keyCode== $.ui.keyCode.DELETE || event.keyCode== $.ui.keyCode.BACKSPACE )
-						{
-							$("#id_cliente" ).val("");
-							$("#tel1" ).val("");
-							$("#mail" ).val("");
-											
-						}
-						if (event.keyCode==$.ui.keyCode.DELETE){
-							$("#nombre_cliente" ).val("");
-							$("#id_cliente" ).val("");
-							$("#tel1" ).val("");
-							$("#mail" ).val("");
-						}
-			});	
-	</script>
 
-    </body>
 
+                    
+
+                </div>
+               
+            </section>
+            
+        </div>
+        
+
+
+
+    <?php include ('../footer.php'); ?>
+
+  
+
+</body>
 
 </html>
 
