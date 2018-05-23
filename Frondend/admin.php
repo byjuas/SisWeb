@@ -19,6 +19,8 @@
 ?>
 
 
+
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -30,9 +32,10 @@ and open the template in the editor.
      <?php include ('../head.php'); ?>
     </head>
     <body>
+        
         <?php include ('../Navbar.php'); ?>
         
-         <!-- START CONTENT -->
+          <!-- START CONTENT -->
       <section id="content">
         
         <!--breadcrumbs start-->
@@ -45,7 +48,7 @@ and open the template in the editor.
           <div class="container">
             <div class="row">
               <div class="col s12 m12 l12">
-                <h5 class="breadcrumbs-title">Inicio</h5>
+                <h5 class="breadcrumbs-title">admin</h5>
                 <ol class="breadcrumbs">
                     <li><a href="index.html">Dashboard</a></li>
                     <li><a href="#">Pages</a></li>
@@ -62,7 +65,7 @@ and open the template in the editor.
         <div class="container">
           <div class="section">
 
-            <p class="caption">Clientes.</p>
+            <p class="caption">admin</p>
             <div class="divider"></div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
           </div>
@@ -84,6 +87,7 @@ and open the template in the editor.
       </section>
         
          <?php include ('../footer.php');?>
-         
+        
+        
     </body>
 </html>

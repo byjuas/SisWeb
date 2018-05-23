@@ -22,11 +22,11 @@
         // the user is logged in. you can do whatever you want here.
         // for demonstration purposes, we simply show the "you are logged in" view.
         
-        if ($_SESSION['rol'] == 1) {
-            header("location: ../Frondend/index.php");
+       if ($_SESSION['rol'] == 1) {
+            header("location: ../Frondend/admin.php");
         } else if ($_SESSION['rol'] == 2) {
                 header("location: ../Frondend/index.php");
-        }
+        }   
     } else {
         ?>
     <!DOCTYPE html>

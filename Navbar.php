@@ -6,6 +6,7 @@
 
 
 <header id="header" class="page-topbar">
+      
         <!-- start header nav-->
         <div class="navbar-fixed">
             <nav class="navbar-color">
@@ -34,7 +35,7 @@
                     <!-- notifications-dropdown -->
                     <ul id="notifications-dropdown" class="dropdown-content">
                       <li>
-                        <h5>NOTIFICATIONEs <span class="new badge">5</span></h5>
+                        <h5>NOTIFICATIONES <span class="new badge">5</span></h5>
                       </li>
                       <li class="divider"></li>
                       <li>
@@ -58,12 +59,15 @@
 
   <!-- START MAIN -->
   <div id="main">
+       
     <!-- START WRAPPER -->
     <div class="wrapper">
-
+   
       <!-- START LEFT SIDEBAR NAV-->
       <aside id="left-sidebar-nav">
-        <ul id="slide-out" class="side-nav fixed leftside-navigation">
+          <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light cyan"><i class="mdi-navigation-menu"></i></a>
+ 
+         <ul id="slide-out" class="side-nav fixed leftside-navigation">
             <li class="user-details cyan darken-2">
             <div class="row">
                 <div class="col col s4 m4 l4">
@@ -103,6 +107,7 @@
                 </ul>
             </li>
             
+            <li class="bold"><a href="../Frondend/personas.php" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i>Afiliados</a>
             <li class="bold"><a href="#" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Mienbros Relacionados</a>
             </li>
             <li class="no-padding">
