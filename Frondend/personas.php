@@ -18,7 +18,10 @@ $active_productos = "active";
 $title = "Inventario | Simple Stock";
 ?>
 
-
+<?php
+require_once ("../Backend/config/db.php"); //Contiene las variables de configuracion para conectar a la base de datos
+require_once ("../Backend/config/conexion.php"); //Contiene funcion que conecta a la base de datos
+?>
 
 
 <!DOCTYPE html>
@@ -29,275 +32,222 @@ and open the template in the editor.
 -->
 <html lang="en">
 
-<head>
-<?php include ('../head.php'); ?>
-</head>
+    <head>
+        <?php include ('../head.php'); ?>
+    </head>
 
-<body>
-    <?php include ('../Navbar.php'); ?>
-            
-            <section id="content">
+    <body>
+        <?php include ('../Navbar.php'); ?>
 
-               
-                <div class="container">
-
-                     
-
-        <!-- START CONTENT -->
         <section id="content">
-
-            <!--breadcrumbs start-->
-            <div id="breadcrumbs-wrapper">
-                <!-- Search for small screen -->
-                <div class="header-search-wrapper grey hide-on-large-only">
-                    <i class="mdi-action-search active"></i>
-                    <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
-                </div>
-
-            </div>
 
             <div class="container">
 
-                <div id="chart-dashboard" >
-                    <div class="row">
-                        <div class="col s12">
-                            <nav class="red">
-                                <div class="nav-wrapper">
-                                    <div class="col s12 m14 24 hide-on-med-and-down">
-                                        <ul>
-                                            <li><a href="#!" class="email-menu"><i class="mdi-navigation-menu"></i></a>
-                                            </li>
-                                            <li><a href="#!" class="email-type">Gestion de Afiliados</a>
-                                            </li>
-                                            <li class="right"><a href="#!"><i class="mdi-action-search right"></i></a>
-                                            </li>
+                <section id="content">
 
-
-                                        </ul>
-                                    </div>
-
-
-                                </div>
-                            </nav>
+                    <!--breadcrumbs start-->
+                    <div id="breadcrumbs-wrapper">
+                        <!-- Search for small screen -->
+                        <div class="header-search-wrapper grey hide-on-large-only">
+                            <i class="mdi-action-search active"></i>
+                            <input type="text" name="Search" class="header-search-input " placeholder="Explore Materialize">
                         </div>
-                        <div class="col s12">
 
-
-                            <div id="email-details" class="col s12 m14 24 card-panel">
-
-                                <div class="email-content-wrap">
-                                    <div class="row">
-
-                                        <!--Iniciode la tabla-->
-                                        <div class="col s12 m12 l12">
-                                            <table class="striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th data-field="no">Id</th>
-                                                        <th data-field="item">Nombres</th>
-                                                        <th data-field="uprice">Apellidos</th>
-                                                        <th data-field="price">Email</th>
-                                                        <th data-field="price">RUC</th>
-                                                        <th data-field="price">DNI</th>
-                                                        <th data-field="price">Fech/N</th>
-                                                        <th data-field="price">telefono</th>
-                                                        <th data-field="price">direccion</th>
-                                                        <th data-field="price">idDep</th>
-                                                        <th data-field="price">idBanco</th>
-                                                        <th data-field="price">N°Cuenta</th>
-                                                        <th data-field="price">N°Pago</th>
-                                                        <th data-field="price">Banco-op</th>
-                                                        <th data-field="price">Patro</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1.</td>
-                                                        <td>Jeiner</td>
-                                                        <td>Castro</td>
-                                                        <td>Tecjeiner@gmil.com</td>
-                                                        <td>12345678901</td>
-                                                        <td>75053012</td>
-                                                        <td>10/06/98</td>
-                                                        <td>961590878</td>
-                                                        <td>villa rica</td>
-                                                        <td>2</td>
-                                                        <td>5</td>
-                                                        <td>51234567890123</td>
-                                                        <td>123456</td>
-                                                        <td>BCP</td>
-                                                        <td>40017574</td>
-                                                    </tr>
-                                                    
-                                                    
-
-
-
-
-                                                </tbody>
-
-
-                                            </table>  
-                                            <ul class="pagination">
-                                                <li class="disabled"><a href="#!"><i class="mdi-navigation-chevron-left"></i></a></li>
-                                                <li class="active"><a href="#!">1</a></li>
-                                                <li class="waves-effect"><a href="#!">2</a></li>
-                                                <li class="waves-effect"><a href="#!">3</a></li>
-                                                <li class="waves-effect"><a href="#!">4</a></li>
-                                                <li class="waves-effect"><a href="#!">5</a></li>
-                                                <li class="waves-effect"><a href="#!"><i class="mdi-navigation-chevron-right"></i></a></li>
-                                            </ul
-                                        </div>
-                                        <!--Fin de la tabla-->
-
-                                    </div>
-
-
-
-                                </div>
-
-
-                            </div>
-                        </div>
                     </div>
 
-                    <!-- Compose Email Trigger -->
-                    <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
-                        <a class="btn-floating btn-large red modal-trigger" href="#modal1">
-                            <i class="mdi-editor-border-color"></i>
-                        </a>
-                    </div>
+                    <div class="container">
 
-                     <?php
-                 require_once ("../Backend/config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
-	         require_once ("../Backend/config/conexion.php");//Contiene funcion que conecta a la base de datos
-                     ?>
-
-                    <!-- Compose Email Structure -->
-                    <div id="modal1" class="modal ">
-                        <div class="modal-content ">
-                            <nav id="header"class="red ">
-                                <div class=" nav-wrapper">
-                                    <div class="left col s12 m5 l5">
-                                        <ul>
-                                            <li><a href="#!" class="email-menu"><i class="modal-action modal-close  mdi-hardware-keyboard-backspace"></i></a>
-                                            </li>
-                                            <li><a href="#!" class="email-type">Registrar Nuevo Usuarario</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col s12 m7 l7 hide-on-med-and-down">
-                                        <ul class="right">
-                                            <li><a href="#!"><i class="mdi-editor-attach-file"></i></a>
-                                            </li>
-                                            <li><a href="#!"><i class="modal-action modal-close  mdi-content-send"></i></a>
-                                            </li>
-                                            <li><a href="#!"><i class="mdi-navigation-more-vert"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </nav>
-                        </div>>
-                        
-                        
-                        <div class="model-email-content">
+                        <div id="chart-dashboard" >
                             <div class="row">
-                                <form class="col s12">
-                                    <!--<div class="row">
-                                      <div class="input-field col s12">
-                                        <input id="from_email" type="email" class="validate">
-                                        <label for="from_email">From</label>
-                                      </div>
-                                    </div> -->
-                                         <div class="input-field col s12 ">
-                                    <ul id="select-options-a497ea3a-d314-e1f5-b896-9ccd4328f93f" class="dropdown-content select-dropdown" style="width: 405px; position: absolute; top: 0px; left: 0px; opacity: 1; display: none;">
+                                <div class="col s12">
+                                    <nav class="red">
+                                        <div class="nav-wrapper">
+                                            <div class="col s12 m12  hide-on-med-and-down">
+                                                <ul>
+                                                    <li>
 
-                                        <li class=""><span>Business</span></li></ul>
-                                    <select class="initialized" name="rol">
-                                        <option value="" disabled="" selected="">Seleccciona departamento</option>
-                                        <?php
-                                        $query_departamento = mysqli_query($con, "select * from rol order by nombre");
-                                        while ($rw = mysqli_fetch_array($query_departamento)) {
-                                            ?>
-                                            <option value="<?php echo $rw['idrol']; ?>"><?php echo $rw['nombre']; ?></option>			
-                                            <?php
-                                        }
-                                        ?>
-                                    </select>
-                                    <label>Departamento</label>
-                                </div>   
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <i class="mdi-action-account-circle prefix"></i>
-                                                <input id="nombre_cliente" type="text" class="validate">
-                                                <input id="id_cliente" type='hidden'>
-                                                <label for="nombre_cliente">Nombre</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <i class="mdi-action-account-circle prefix"></i>
-                                                <input  id="apellidos" type="text" class="validate">
-                                                <label for="last_name">Apellidos</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <i class="mdi-action-account-circle prefix"></i>
-                                                <input id="mail" type="email" class="validate">
-                                                <label for="last_name">Email</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <i class="mdi-action-account-circle prefix"></i>
-                                                <input id="last_name" type="text" class="validate">
-                                                <label for="last_name">Usuario</label>
-                                            </div>
-                                        </div>
-                                    <div class="row">
-                                            <div class="input-field col s6">
-                                                <i class="mdi-action-account-circle prefix"></i>
-                                                <input id="last_name" type="password" class="validate">
-                                                <label for="last_name">Contraseña</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <i class="mdi-action-account-circle prefix"></i>
-                                                <input id="last_name" type="password" class="validate">
-                                                <label for="last_name">Validar Contraseña   </label>
-                                            </div>
-                                        </div>
-                                    
+                                                        <div class="header-search-wrapper hide-on-med-and-down">
+                                                            <i class="mdi-action-search"></i>
+                                                            <input type="text" name="Search" id="q" class="header-search-input z-depth-2" placeholder="Buscar" onkeyup='load(1);'>
+                                                        </div>
+                                                    </li>
+                                                    <li class="right" >
 
-                                </form>
+                                                        <a href="#" class="email-menu"><i class="mdi-navigation-menu"></i></a>
+
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+                                    </nav>
+                                </div>
+
+                                <div id="resultados"></div>
+                                <div class='outer_div'></div>
+                                <!-- Compose Email Trigger -->
+                                <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
+                                    <a class="btn-floating btn-large red modal-trigger" href="#modal1">
+                                        <i class="mdi-editor-border-color"></i>
+                                    </a>
+                                </div>
+
+
+
+                                <!-- Compose Email Structure -->
+                                <div id="modal1" class="modal ">
+                                    <div class="modal-content ">
+                                        <nav id="header"class="red ">
+                                            <div class=" nav-wrapper">
+                                                <div class="left col s12 m5 l5">
+                                                    <ul>
+                                                        <li><a href="#!" class="email-menu"><i class="modal-action modal-close  mdi-hardware-keyboard-backspace"></i></a>
+                                                        </li>
+                                                        <li><a href="#!" class="email-type">Registrar Nuevo Usuarario</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col s12 m7 l7 hide-on-med-and-down">
+                                                    <ul class="right">
+                                                        <li><a href="#!"><i class="mdi-editor-attach-file"></i></a>
+                                                        </li>
+                                                        <li><a href="#!"><i class="modal-action modal-close  mdi-content-send"></i></a>
+                                                        </li>
+                                                        <li><a href="#!"><i class="mdi-navigation-more-vert"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </nav>
+                                    </div>
+
+
+                                    <div class="model-email-content">
+                                        <div class="row">
+                                            <form class="col s12">
+
+                                                <div class="input-field col s12 ">
+                                                    <ul id="select-options-a497ea3a-d314-e1f5-b896-9ccd4328f93f" class="dropdown-content select-dropdown" style="width: 405px; position: absolute; top: 0px; left: 0px; opacity: 1; display: none;">
+
+                                                        <li class=""><span>Business</span></li></ul>
+                                                    <select class="initialized" name="rol">
+                                                        <option value="" disabled="" selected="">Seleccciona departamento</option>
+                                                        <?php
+                                                        $query_departamento = mysqli_query($con, "select * from rol order by nombre");
+                                                        while ($rw = mysqli_fetch_array($query_departamento)) {
+                                                            ?>
+                                                            <option value="<?php echo $rw['idrol']; ?>"><?php echo $rw['nombre']; ?></option>			
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                    <label>Departamento</label>
+                                                </div>   
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <i class="mdi-action-account-circle prefix"></i>
+                                                        <input type="text"  id="nombre_cliente" >
+                                                        <input  type='hidden'id="id_cliente" class="validate" >
+                                                        <label for="nombre_cliente">Nombre</label>
+                                                    </div>
+                                                    <div class="input-field col s6">
+                                                        <i class="mdi-action-account-circle prefix"></i>
+                                                        <input  id="apellidos" disabled="true" type="text" class="validate" readonly="true">
+                                                        <label for="last_name">Apellidos</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <i class="mdi-action-account-circle prefix"></i>
+                                                        <input id="mail" type="email" disabled="true"  class="validate" readonly="true">
+                                                        <label for="last_name">Email</label>
+                                                    </div>
+                                                    <div class="input-field col s6">
+                                                        <i class="mdi-action-account-circle prefix"></i>
+                                                        <input id="dni" type="text" class="validate" disabled="true" readonly="" >
+                                                        <label for="last_name">DNI</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <i class="mdi-action-account-circle prefix"></i>
+                                                        <input id="last_name" type="password" class="validate">
+                                                        <label for="last_name">Contraseña</label>
+                                                    </div>
+                                                    <div class="input-field col s6">
+                                                        <i class="mdi-action-account-circle prefix"></i>
+                                                        <input id="last_name" type="password" class="validate">
+                                                        <label for="last_name">Validar Contraseña   </label>
+                                                    </div>
+                                                </div>
+
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
                     </div>
-                </div>
+
+                </section>
 
             </div>
-            </div>
-            <!--end container-->
-
 
         </section>
 
 
 
-                    
-
-                </div>
-               
-            </section>
-            
-        </div>
+        <?php include ('../footer.php'); ?>
+       
         
+        <script src="../js/usuarios.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        
+<script>
+                                                                $(function () {
+                                                                    $("#nombre_cliente").autocomplete({                                                                
+                                                                        source: "../Backend/autocomplete/usuarios.php",
+                                                                        minLength: 2,
+                                                                        select: function (event, ui) {
+                                                                            event.preventDefault();
+                                                                            $('#id_cliente').val(ui.item.idpersonas);
+                                                                            $('#nombre_cliente').val(ui.item.nombres);
+                                                                            $('#apellidos').val(ui.item.apellidos);
+                                                                            $('#mail').val(ui.item.email);
+                                                                            $('#dni').val(ui.item.dni);
+
+                                                                        }
+                                                                    });
 
 
+                                                                });
 
-    <?php include ('../footer.php'); ?>
+                                                                $("#nombre_cliente").on("keydown", function (event) {
+                                                                    if (event.keyCode == $.ui.keyCode.LEFT || event.keyCode == $.ui.keyCode.RIGHT || event.keyCode == $.ui.keyCode.UP || event.keyCode == $.ui.keyCode.DOWN || event.keyCode == $.ui.keyCode.DELETE || event.keyCode == $.ui.keyCode.BACKSPACE)
+                                                                    {
+                                                                        $("#id_cliente").val("");
+                                                                        $("#apellidos").val("");
+                                                                        $("#mail").val("");
+                                                                        $("#dni").val("");
 
-  
+                                                                    }
+                                                                    if (event.keyCode == $.ui.keyCode.DELETE) {
+                                                                        $("#nombre_cliente").val("");
+                                                                        $("#id_cliente").val("");
+                                                                        $("#apellidos").val("");
+                                                                        $("#mail").val("");
+                                                                        $("#dni").val("");
+                                                                    }
+                                                                });
+        </script>
 
-</body>
+    </body>
 
 </html>
 

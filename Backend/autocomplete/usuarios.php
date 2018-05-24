@@ -16,7 +16,8 @@ if ($con)
 		$row_array['idpersonas']=$id_cliente;
 		$row_array['nombres']=$row['nombres'];
 		$row_array['apellidos']=$row['apellidos'];
-		$row_array['email']=$row['email'];
+                $row_array['email']=$row['email'];
+		$row_array['dni']=$row['dni'];
 		array_push($return_arr,$row_array);
     }
 	
