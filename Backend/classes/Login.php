@@ -78,10 +78,10 @@ class Login {
                         
                         
                     } else {
-                        $this->errors[] = "Usuario y /o contraseña no coinciden.";
+                        $this->errors[] = "Usuario y / o contraseña no coinciden.";
                     }
                 } else {
-                    $this->errors[] = "Usuario y /o contraseña no coinciden.";
+                    $this->errors[] = "Usuario y / o contraseña no coinciden.";
                 }
             }else {
                 $this->errors[] = "Problema de conexión de base de datos.";

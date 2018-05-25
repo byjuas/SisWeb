@@ -1,33 +1,18 @@
 <?php
-if (isset($_GET['term'])){
+if (isset($_GET['query'])){
 include("../config/db.php");
 include("../config/conexion.php");
-$return_arr = array();
-/* If connection to database, run sql statement. */
-if ($con)
-{
-	
-	$fetch = mysqli_query($con,"SELECT * FROM personas where nombres like '%" . mysqli_real_escape_string($con,($_GET['term'])) . "%' LIMIT 0 ,50"); 
-	
-	/* Retrieve and store in array the results of the query.*/
-	while ($row = mysqli_fetch_array($fetch)) {
-		$id_cliente=$row['idpersonas'];
-		$row_array['value'] = $row['nombres'];
-		$row_array['idpersonas']=$id_cliente;
-		$row_array['nombres']=$row['nombres'];
-		$row_array['apellidos']=$row['apellidos'];
-                $row_array['email']=$row['email'];
-		$row_array['dni']=$row['dni'];
-		array_push($return_arr,$row_array);
+    
+$respuesta = mysqli_real_escape_string($cn, $_POST['query']);
+    $data = array();
+    $sql = "SELECT * from personas WHERE nombres LIKE '%" . $respuesta . "%'";
+    $res = $cn->query($sql);
+    if ($res->num_rows > 0) {
+        while ($row = $res->fetch_assoc()) {
+            $data[] = $row["nombres"];
+        }
+        echo json_encode($data);
     }
-	
-}
-
-/* Free connection resources. */
-mysqli_close($con);
-
-/* Toss back results as json encoded array. */
-echo json_encode($return_arr);
 
 }
 ?>

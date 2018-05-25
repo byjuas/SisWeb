@@ -7,12 +7,12 @@ include ('../clientes/is_logged.php');
 $action = (isset($_REQUEST['action']) && $_REQUEST['action'] != NULL) ? $_REQUEST['action'] : '';
 
 if (isset($_GET['id'])) {
-    $personas_id = intval($_GET['id']);
-    $query = mysqli_query($con, "select * from personas where idpersonas='" . $personas_id . "'");
+    $producto_id = intval($_GET['id']);
+    $query = mysqli_query($con, "select * from productos where idproductos='" . $producto_id . "'");
     $rw_user = mysqli_fetch_array($query);
     $count = $rw_user['idpersonas'];
     if ($user_id != 1) {
-        if ($delete1 = mysqli_query($con, "DELETE FROM personas WHERE idpersonas='" . $personas_id . "'")) {
+        if ($delete1 = mysqli_query($con, "DELETE FROM productos WHERE idproductos='" . $producto_id . "'")) {
             ?>
             <div class="alert alert-success alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -39,8 +39,8 @@ if (isset($_GET['id'])) {
 if ($action == 'ajax') {
     // escaping, additionally removing everything that could be (html/javascript-) code
     $q = mysqli_real_escape_string($con, (strip_tags($_REQUEST['q'], ENT_QUOTES)));
-    $aColumns = array('nombres', 'apellidos'); //Columnas de busqueda
-    $sTable = "personas";
+    $aColumns = array('nombre'); //Columnas de busqueda
+    $sTable = "productos";
     $sWhere = "";
     if ($_GET['q'] != "") {
         $sWhere = "WHERE (";
@@ -50,7 +50,7 @@ if ($action == 'ajax') {
         $sWhere = substr_replace($sWhere, "", -3);
         $sWhere .= ')';
     }
-    $sWhere .= " order by idpersonas desc";
+    $sWhere .= " order by idproductos desc";
     //include 'pagination.php'; //include pagination file
     //pagination variables
     $page = (isset($_REQUEST['page']) && !empty($_REQUEST['page'])) ? $_REQUEST['page'] : 1;
@@ -62,7 +62,7 @@ if ($action == 'ajax') {
     $row = mysqli_fetch_array($count_query);
     $numrows = $row['numrows'];
     $total_pages = ceil($numrows / $per_page);
-    $reload = '../../Frondend/personas.php';
+    $reload = '../../Frondend/Productos.php';
     //main query to fetch the data
     $sql = "SELECT * FROM  $sTable $sWhere LIMIT $offset,$per_page";
     $query = mysqli_query($con, $sql);
@@ -78,39 +78,25 @@ if ($action == 'ajax') {
                                 <thead>
                                     <tr>
                                         <th data-field="no">Id</th>
-                                        <th data-field="item">Nombres</th>                                      
-                                        <th data-field="price">Email</th>
-                                        <th data-field="price">Ruc</th>
-                                        <th data-field="price">DNI</th>
-                                        <th data-field="price">Fech/N</th>
-                                        <th data-field="price">telefono</th>
-                                        <th data-field="price">direccion</th>
-                                        <th data-field="price">idDep</th>
-                                        <th data-field="price">idBanco</th>
-                                        <th data-field="price">N°Cuenta</th>
-                                        <th data-field="price">N°Pago</th>
-                                        <th data-field="price">Banco</th>
-                                        <th data-field="price">Patro</th>
+                                        <th data-field="item">Nombre</th>                                      
+                                        <th data-field="price">Marca</th>
+                                        <th data-field="price">U/Medida</th>
+                                        <th data-field="price">Cantidad</th>
+                                        <th data-field="price">Precio</th>
+                                        
                                         <th><span class="pull-right">Acciones</span></th>
                                     </tr>
                                 </thead>
 
         <?php
         while ($row = mysqli_fetch_array($query)) {
-            $user_id = $row['idpersonas'];
-            $fullname = $row['nombres'] . " " . $row["apellidos"];
-            $emial = $row['email'];
-            $ruc = $row['ruc'];
-            $dni = $row['dni'];
-            $fechNac = $row['fechaNacimiento'];
-            $telefono = $row['telefono'];
-            $direccion = $row['direccion'];
-            $departamento = $row['iddepartamento'];
-            $banco = $row['idbanco'];
-            $num_cuenta = $row['num_cuenta_bancaria'];
-            $num_pago = $row['num_op_pago'];
-            $op_banco = $row['banco_operacion'];
-            $patrocinador = $row['patrocinador'];
+            $producto_id = $row['idproductos'];
+            $nombre = $row['nombre'];
+            $marca = $row['marca'];
+            $uni_medida = $row['uni_medida'];
+            $cantidad = $row['cantidad'];
+            $precio = $row['precio'];
+            
             //$date_added = date('d/m/Y', strtotime($row['date_added']));
             ?>
 
@@ -121,20 +107,13 @@ if ($action == 'ajax') {
 
                                     <tbody>
                                         <tr>
-                                            <td><?php echo $user_id; ?></td>
-                                            <td><?php echo $fullname; ?></td>
-                                            <td><?php echo $emial; ?></td>
-                                            <td><?php echo $ruc; ?></td>
-                                            <td><?php echo $dni; ?></td>
-                                            <td><?php echo $fechNac; ?></td>
-                                            <td><?php echo $telefono; ?></td>
-                                            <td><?php echo $direccion; ?></td>
-                                            <td><?php echo $departamento; ?></td>                                            
-                                            <td><?php echo $banco; ?></td>
-                                            <td><?php echo $num_cuenta; ?></td>
-                                            <td><?php echo $num_pago; ?></td>
-                                            <td><?php echo $op_banco; ?></td>
-                                            <td><?php echo $patrocinador; ?></td>
+                                            <td><?php echo $producto_id; ?></td>
+                                            <td><?php echo $nombre; ?></td>
+                                            <td><?php echo $marca; ?></td>
+                                            <td><?php echo $uni_medida; ?></td>
+                                            <td><?php echo $cantidad; ?></td>
+                                            <td><?php echo $precio; ?></td>
+                                            
                                         
                                         </tr>
 

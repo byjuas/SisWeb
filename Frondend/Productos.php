@@ -206,7 +206,7 @@ and open the template in the editor.
 
 
         
-        <script src="../js/clientes.js" type="text/javascript"></script>
+        <script src="../js/productos.js" type="text/javascript"></script>
         
         
         

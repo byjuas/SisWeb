@@ -19,8 +19,6 @@
 ?>
 
 
-
-
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -30,13 +28,11 @@ and open the template in the editor.
 <html>
     <head>
      <?php include ('../head.php'); ?>
-         
     </head>
     <body>
+        <?php include ('../Navbar_clientes.php'); ?>
         
-        <?php include ('../Navbar.php'); ?>
-        
-          <!-- START CONTENT -->
+         <!-- START CONTENT -->
       <section id="content">
         
         <!--breadcrumbs start-->
@@ -49,7 +45,7 @@ and open the template in the editor.
           <div class="container">
             <div class="row">
               <div class="col s12 m12 l12">
-                <h5 class="breadcrumbs-title">admin</h5>
+                <h5 class="breadcrumbs-title">Inicio</h5>
                 <ol class="breadcrumbs">
                     <li><a href="index.html">Dashboard</a></li>
                     <li><a href="#">Pages</a></li>
@@ -65,11 +61,11 @@ and open the template in the editor.
         <!--start container-->
         <div class="container">
           <div class="section">
-                
-             </div>
-            
-            
-            
+
+            <p class="caption">Clientes.</p>
+            <div class="divider"></div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
           <!-- Floating Action Button -->
             <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
                 <a class="btn-floating btn-large">
@@ -86,11 +82,8 @@ and open the template in the editor.
         </div>
         <!--end container-->
       </section>
-          
-          <?php include ('../footer.php');?>
         
-            
-        
-        
+         <?php include ('../footer.php');?>
+         
     </body>
 </html>

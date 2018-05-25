@@ -205,8 +205,8 @@ and open the template in the editor.
         <?php include ('../footer.php'); ?>
 
 
+        <script src="../js/users.js" type="text/javascript"></script>
         
-        <script src="../js/clientes.js" type="text/javascript"></script>
         
         
         

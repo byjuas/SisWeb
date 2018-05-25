@@ -33,7 +33,7 @@
     <script type="text/javascript" src="../js/plugins.min.js"></script>
 
     <script type="text/javascript" src="../js/custom-script.js"></script>
-     
-        
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap3-typeahead.min.js" type="text/javascript"></script>
         
     

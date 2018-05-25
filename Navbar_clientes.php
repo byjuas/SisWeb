@@ -84,30 +84,17 @@ if (isset($title)) {
                             </div>
                         </div>
                     </li>
-                    <li class="bold"><a href="../Frondend/Productos.php" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>Inicio</a>
+                    <li class="bold"><a href="../Frondend/index_cliente.php" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>Inicio</a>
                     </li>
 
 
-                    <li class="bold"><a href="../Frondend/Productos.php" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Productos</a>
+                    <li class="bold"><a href="../Frondend/Cliente_productos.php" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Productos</a>
                     </li>
-                   
-                    <li class="no-padding">
-                        <ul class="collapsible collapsible-accordion">
-
-
-                            <li class="bold"><a href="../Frondend/personas.php" class="waves-effect waves-cyan"><i class="mdi-device-now-widgets"></i> Clientes</a>
-                            </li>
-                            <li class="bold"><a href="../Frondend/Usuarios.php" class="waves-effect waves-cyan"><i class="mdi-device-now-widgets"></i> Usuarios</a>
-                            </li>
-
-
-                        </ul>
+                   <li class="bold"><a href="#" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Miendros Relacionados</a>
                     </li>
-                    <li class="li-hover"><div class="divider"></div></li>
-                    <li class="li-hover"><p class="ultra-small margin more-text">Mas</p></li>
-
-                    <li><a href=""><i class="mdi-image-grid-on"></i> Contactanos</a>
+                   <li class="bold"><a href="../Frondend/Cliente_Perfil.php" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Perfil</a>
                     </li>
+                    
                     
                     <li><a href="../Frondend/Login.php?logout"><i class="mdi-editor-format-color-fill"></i> Cerrar Sesion</a>
                     </li>
